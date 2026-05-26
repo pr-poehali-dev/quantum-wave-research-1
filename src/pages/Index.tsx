@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Hero3DWebGL as Hero3D } from "@/components/hero-webgl"
 import { FeaturesSection } from "@/components/features-section"
 import { TechnologySection } from "@/components/technology-section"
@@ -9,29 +10,36 @@ import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { RequestModal } from "@/components/request-modal"
+import { ModalContext } from "@/lib/modal-context"
 
 export default function Index() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
-    <div className="dark">
-      <Navbar />
-      <main>
-        <Hero3D />
-        <FeaturesSection />
-        <section id="technology">
-          <TechnologySection />
-        </section>
-        <ApplicationsTimeline />
-        <AboutSection />
-        <section id="safety">
-          <SafetySection />
-        </section>
-        <TestimonialsSection />
-        <section id="faq">
-          <FAQSection />
-        </section>
-        <CTASection />
-      </main>
-      <Footer />
-    </div>
+    <ModalContext.Provider value={{ openModal: () => setModalOpen(true) }}>
+      <div className="dark">
+        <Navbar />
+        <main>
+          <Hero3D />
+          <FeaturesSection />
+          <section id="technology">
+            <TechnologySection />
+          </section>
+          <ApplicationsTimeline />
+          <AboutSection />
+          <section id="safety">
+            <SafetySection />
+          </section>
+          <TestimonialsSection />
+          <section id="faq">
+            <FAQSection />
+          </section>
+          <CTASection />
+        </main>
+        <Footer />
+        <RequestModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      </div>
+    </ModalContext.Provider>
   )
 }

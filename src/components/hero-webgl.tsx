@@ -3,6 +3,7 @@ import { useAspect, useTexture } from "@react-three/drei"
 import { useMemo, useRef, useState, useEffect } from "react"
 import * as THREE from "three"
 import { Button } from "@/components/ui/button"
+import { useModal } from "@/lib/modal-context"
 
 const TEXTUREMAP = { src: "https://i.postimg.cc/XYwvXN8D/img-4.png" }
 const DEPTHMAP = { src: "https://i.postimg.cc/2SHKQh2q/raw-4.webp" }
@@ -115,6 +116,7 @@ const Scene = () => {
 }
 
 export const Hero3DWebGL = () => {
+  const { openModal } = useModal()
   const titleWords = "Дома из газобетона".split(" ")
   const subtitle = "Строим под ключ — от фундамента до отделки."
   const [visibleWords, setVisibleWords] = useState(0)
@@ -188,6 +190,7 @@ export const Hero3DWebGL = () => {
         >
           <Button
             size="lg"
+            onClick={openModal}
             className="bg-red-500 hover:bg-red-600 text-white text-lg px-10 py-5 font-orbitron normal-case border-0 shadow-lg shadow-red-500/30"
           >
             Получить расчёт стоимости
