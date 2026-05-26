@@ -8,14 +8,17 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <h2 className="font-orbitron text-2xl font-bold text-white mb-4">
-              Газо<span className="text-red-500">Дом</span>
+              Строй<span className="text-red-500">Групп</span>
             </h2>
-            <p className="font-space-mono text-gray-300 mb-6 max-w-md">
+            <p className="font-space-mono text-gray-300 mb-4 max-w-md">
               Строим дома из газобетона под ключ с 2010 года. Более 300 сданных объектов.
               Фиксированная цена и сроки по договору.
             </p>
+            <a href="tel:+79211899918" className="font-space-mono text-red-400 hover:text-red-300 transition-colors duration-200 text-lg font-semibold mb-6 block">
+              +7 921 189-99-18
+            </a>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
+              <a href="tel:+79211899918" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
                 <Phone size={20} />
               </a>
               <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
@@ -88,7 +91,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-red-500/20">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="font-space-mono text-gray-400 text-sm">© 2026 ГазоДом. Все права защищены.</p>
+            <p className="font-space-mono text-gray-400 text-sm">© 2026 СтройГрупп. Все права защищены.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="font-space-mono text-gray-400 hover:text-red-500 text-sm transition-colors duration-200">
                 Политика конфиденциальности

@@ -12,7 +12,7 @@ export function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="font-orbitron text-xl font-bold text-white">
-              Газо<span className="text-red-500">Дом</span>
+              Строй<span className="text-red-500">Групп</span>
             </h1>
           </div>
 
@@ -34,8 +34,11 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Phone + CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <a href="tel:+79211899918" className="text-white font-geist hover:text-red-500 transition-colors duration-200 font-semibold">
+              +7 921 189-99-18
+            </a>
             <Button className="bg-red-500 hover:bg-red-600 text-white font-geist border-0">Получить расчёт</Button>
           </div>
 
