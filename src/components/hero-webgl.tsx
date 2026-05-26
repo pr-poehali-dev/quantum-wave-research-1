@@ -2,6 +2,7 @@ import { Canvas, extend, useFrame } from "@react-three/fiber"
 import { useAspect, useTexture } from "@react-three/drei"
 import { useMemo, useRef, useState, useEffect } from "react"
 import * as THREE from "three"
+import { Button } from "@/components/ui/button"
 
 const TEXTUREMAP = { src: "https://i.postimg.cc/XYwvXN8D/img-4.png" }
 const DEPTHMAP = { src: "https://i.postimg.cc/2SHKQh2q/raw-4.webp" }
@@ -150,7 +151,7 @@ export const Hero3DWebGL = () => {
         <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
       </div>
 
-      <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
+      <div className="h-screen uppercase items-center w-full absolute z-[60] px-10 flex justify-center flex-col">
         <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
           <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
             {titleWords.map((word, index) => (
@@ -177,6 +178,20 @@ export const Hero3DWebGL = () => {
           >
             {subtitle}
           </div>
+        </div>
+        <div
+          className={subtitleVisible ? "fade-in-subtitle mt-8" : "mt-8"}
+          style={{
+            animationDelay: `${titleWords.length * 0.13 + 0.6 + subtitleDelay}s`,
+            opacity: subtitleVisible ? undefined : 0,
+          }}
+        >
+          <Button
+            size="lg"
+            className="bg-red-500 hover:bg-red-600 text-white text-lg px-10 py-5 font-orbitron normal-case border-0 shadow-lg shadow-red-500/30"
+          >
+            Получить расчёт стоимости
+          </Button>
         </div>
       </div>
 
