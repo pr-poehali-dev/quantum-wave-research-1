@@ -138,6 +138,11 @@ export const Hero3DWebGL = () => {
 
   return (
     <div className="h-screen bg-black relative overflow-hidden">
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/6dd03886-b06c-426e-a600-cc9708ce98e9/files/4f400cbf-dbc5-4a6b-8a50-8cab7b4d294f.jpg')" }}
+      />
+      <div className="absolute inset-0 z-0 bg-black/60" />
       <div className="absolute inset-0 pointer-events-none z-10">
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
@@ -175,18 +180,7 @@ export const Hero3DWebGL = () => {
         </div>
       </div>
 
-      <Canvas
-        flat
-        gl={{
-          antialias: true,
-          alpha: false,
-          powerPreference: "high-performance",
-        }}
-        camera={{ position: [0, 0, 1] }}
-        style={{ background: "#000000" }}
-      >
-        <Scene />
-      </Canvas>
+
     </div>
   )
 }
