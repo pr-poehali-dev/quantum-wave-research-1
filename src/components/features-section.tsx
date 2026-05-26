@@ -3,40 +3,40 @@ import { Badge } from "@/components/ui/badge"
 
 const features = [
   {
-    title: "Адаптивная нейрообработка",
-    description: "Самооптимизирующиеся алгоритмы, которые обучаются на нейронных паттернах и улучшают интерпретацию сигналов.",
-    icon: "brain",
-    badge: "ИИ",
+    title: "Строительство под ключ",
+    description: "Полный цикл от проектирования до сдачи объекта. Берём на себя все этапы — вы получаете готовый дом.",
+    icon: "house",
+    badge: "Под ключ",
   },
   {
-    title: "Медицинская защита",
-    description: "Шифрование по стандартам FDA со сквозной защитой конфиденциальных нейронных данных.",
-    icon: "lock",
-    badge: "Сертификат",
+    title: "Газобетонные блоки",
+    description: "Используем только сертифицированный газобетон ведущих производителей. Тепло, прочно, долговечно.",
+    icon: "brick",
+    badge: "Материал",
   },
   {
-    title: "Интуитивное управление",
-    description: "Естественная трансляция мыслей в действия с откликом менее миллисекунды и точностью 99,7%.",
-    icon: "globe",
-    badge: "Точность",
+    title: "Фиксированная цена",
+    description: "Смета фиксируется в договоре и не меняется в процессе строительства. Никаких сюрпризов.",
+    icon: "shield",
+    badge: "Гарантия",
   },
   {
-    title: "Предиктивная калибровка",
-    description: "ML-модели, которые предугадывают намерения пользователя и оптимизируют нейронные пути.",
-    icon: "zap",
-    badge: "Умный",
+    title: "Сроки по договору",
+    description: "Строго соблюдаем сроки. За каждую неделю просрочки — штраф в пользу клиента.",
+    icon: "clock",
+    badge: "Сроки",
   },
   {
-    title: "Биометрическая интеграция",
-    description: "Бесшовная синхронизация с мониторингом жизненных показателей для контроля здоровья.",
-    icon: "link",
-    badge: "Связь",
+    title: "Отделка и инженерия",
+    description: "Чистовая отделка, электрика, водоснабжение, отопление — всё в одном проекте и договоре.",
+    icon: "wrench",
+    badge: "Полный цикл",
   },
   {
-    title: "Поддержка XR",
-    description: "Нативная совместимость с AR/VR-средами для терапевтических и рабочих приложений.",
-    icon: "target",
-    badge: "XR Ready",
+    title: "Гарантия 5 лет",
+    description: "Даём гарантию на конструктив 5 лет, на отделочные работы — 2 года. Устраняем замечания бесплатно.",
+    icon: "star",
+    badge: "Надёжность",
   },
 ]
 
@@ -45,9 +45,9 @@ export function FeaturesSection() {
     <section className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Возможности нового поколения</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Почему выбирают нас</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Почувствуйте будущее с технологиями, которые переопределяют возможное
+            Строим газобетонные дома с 2010 года — более 300 сданных объектов по всей России
           </p>
         </div>
 
@@ -61,12 +61,12 @@ export function FeaturesSection() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-3xl">
-                    {feature.icon === "brain" && "&#129504;"}
-                    {feature.icon === "lock" && "&#128274;"}
-                    {feature.icon === "globe" && "&#127760;"}
-                    {feature.icon === "zap" && "&#9889;"}
-                    {feature.icon === "link" && "&#128279;"}
-                    {feature.icon === "target" && "&#127919;"}
+                    {feature.icon === "house" && "🏠"}
+                    {feature.icon === "brick" && "🧱"}
+                    {feature.icon === "shield" && "🛡️"}
+                    {feature.icon === "clock" && "⏱️"}
+                    {feature.icon === "wrench" && "🔧"}
+                    {feature.icon === "star" && "⭐"}
                   </span>
                   <Badge variant="secondary" className="bg-accent text-accent-foreground">
                     {feature.badge}

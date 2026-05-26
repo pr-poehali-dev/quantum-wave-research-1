@@ -3,25 +3,25 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const testimonials = [
   {
-    name: "Елена Родригес",
-    role: "Директор по нейронауке, Quantum Dynamics",
-    avatar: "/professional-woman-scientist.png",
-    content:
-      "SynapseAI изменил наш подход к нейрореабилитации. Результаты пациентов улучшились на 340% после внедрения.",
-  },
-  {
-    name: "Маркус Уильямс",
-    role: "Руководитель исследований, Stellar Analytics",
+    name: "Александр Петров",
+    role: "Владелец дома, Московская область",
     avatar: "/cybersecurity-expert-man.jpg",
     content:
-      "Точность и протоколы безопасности не имеют аналогов. Мы значительно ускорили клинические испытания с платформой SynapseAI.",
+      "Построили дом 120 м² за 8 месяцев точно в срок. Смета не выросла ни на рубль. Живём второй год — никаких проблем, тепло даже в сильные морозы.",
   },
   {
-    name: "Анна Ковальски",
-    role: "Вице-президент по разработке, Nova Industries",
+    name: "Марина Соколова",
+    role: "Владелец дома, Подмосковье",
+    avatar: "/professional-woman-scientist.png",
+    content:
+      "Сначала боялась строиться — много историй про обман. Здесь всё прозрачно: договор, смета, фотоотчёты каждую неделю. Рекомендую всем знакомым.",
+  },
+  {
+    name: "Дмитрий Захаров",
+    role: "Владелец дома, Тверская область",
     avatar: "/asian-woman-tech-developer.jpg",
     content:
-      "Интеграция прошла безупречно. Адаптивные алгоритмы понимают намерения пользователя лучше любой системы, что мы тестировали.",
+      "Газобетонный дом с отделкой под ключ. Качество строительства на высоте — проверял каждый этап. Отдельная благодарность за честность по срокам.",
   },
 ]
 
@@ -30,9 +30,9 @@ export function TestimonialsSection() {
     <section className="py-24 px-6 bg-card">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Нам доверяют лидеры</h2>
+          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Отзывы наших клиентов</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Что говорят лидеры индустрии о нашей революционной технологии
+            Более 300 семей уже живут в домах, которые мы построили
           </p>
         </div>
 
