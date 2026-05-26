@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+const SEND_URL = "https://functions.poehali.dev/ec56a75b-4047-437a-b832-e0857fb75269"
+
 interface RequestModalProps {
   open: boolean
   onClose: () => void
@@ -14,13 +16,25 @@ export function RequestModal({ open, onClose }: RequestModalProps) {
   const [phone, setPhone] = useState("")
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 800))
-    setLoading(false)
-    setSent(true)
+    setError("")
+    try {
+      const res = await fetch(SEND_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone }),
+      })
+      if (!res.ok) throw new Error("Ошибка отправки")
+      setSent(true)
+    } catch {
+      setError("Не удалось отправить заявку. Позвоните нам напрямую: +7 921 189-99-18")
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleClose = () => {
@@ -29,6 +43,7 @@ export function RequestModal({ open, onClose }: RequestModalProps) {
       setSent(false)
       setName("")
       setPhone("")
+      setError("")
     }, 300)
   }
 
@@ -67,6 +82,9 @@ export function RequestModal({ open, onClose }: RequestModalProps) {
                   className="bg-zinc-800 border-zinc-700 text-white placeholder:text-gray-500 focus:border-red-500"
                 />
               </div>
+              {error && (
+                <p className="text-red-400 text-sm font-space-mono">{error}</p>
+              )}
               <Button
                 type="submit"
                 disabled={loading}
